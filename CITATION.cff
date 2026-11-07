@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the conference paper when using this research artifact."
 title: "Risk-Adaptive Agent Authorization"
+repository-code: "https://github.com/vino4all/risk-adaptive-agent-authorization"
 authors:
   - family-names: "Arputharaj"
     given-names: "Vinothkumar"
