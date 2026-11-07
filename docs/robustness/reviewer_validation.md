@@ -6,6 +6,8 @@
 
 This analysis pairs the 60 blinded validation cases by `reviewer_scenario_id`. The frozen policy label was joined to `confirmatory/inputs/scenarios.yaml` through a withheld private crosswalk; the 150-case primary decision CSV was used only for the optional exploratory subset metrics. The three blinded returns are withheld for reviewer privacy. Aggregate results below use Reviewer 1, Reviewer 2, and Reviewer 3; the original private analysis and inputs are preserved outside the public repository.
 
+**Provenance correction.** A private source filename previously attributed the Reviewer 3 return to the wrong person. The renamed source and the analyzed private copy are byte-identical, and all 60 Reviewer 3 labels match the deidentified public column. The published three-reviewer calculations use Reviewer 1, Reviewer 2, and Reviewer 3 only; this correction changes no labels or numerical results.
+
 Each return has exactly **60 rows and 60 unique IDs**. Every ID set exactly matches the outbound `confirmatory/reviewer_export/reviewer_sample.csv`; every nonresponse scenario field matches its outbound row; every label is nonblank and exactly `ALLOW`, `ESCALATE`, or `DENY`. The key has the same 60 IDs, and its frozen scenario labels match the recorded primary labels. The files contain separate completed judgments; their procedural independence comes from the blinded review workflow, which file contents alone cannot establish.
 
 ## 1. Pairwise agreement
