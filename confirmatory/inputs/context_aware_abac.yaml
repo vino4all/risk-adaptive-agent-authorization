@@ -1,0 +1,20 @@
+_meta:
+  schema_version: "1.0.0"
+  status: confirmatory-comparator-frozen
+  locked: true
+  numerical_risk_formula_used: false
+
+name: context_aware_binary_abac
+description: >-
+  Binary-safe projection of the independently authored qualitative policy.
+  It observes the same five scenario attributes as the risk-adaptive system,
+  retains context conditions unchanged, and never computes a numerical score.
+attributes: [role, tool, sensitivity, destination, context_risk]
+rules_source: confirmatory/inputs/policy_matrix.yaml#ground_truth_matrix.rules
+decision_mapping:
+  ALLOW: ALLOW
+  ESCALATE: DENY
+  DENY: DENY
+default_decision: DENY
+binary_only: true
+

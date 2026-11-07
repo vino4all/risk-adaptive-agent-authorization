@@ -1,0 +1,109 @@
+_meta:
+  file: data/risk_config.yaml
+  schema_version: "1.0.0"
+  status: pilot-calibrated
+  source_dataset: data/pilot_scenarios.yaml
+  ground_truth_source: data/policy_matrix.yaml#ground_truth_matrix
+  final_dataset_used: false
+
+formula: "R = ws*S + wa*A + we*E + wc*C"
+pilot_scenario_count: 24
+primary_evaluation_started: false
+immutable_after_primary_evaluation_starts: true
+
+component_sources:
+  sensitivity: sensitivity
+  action_severity: tool
+  exposure_scope: destination
+  contextual_risk: context_risk
+
+component_mappings:
+  sensitivity:
+    INTERNAL: 0.0
+    CONFIDENTIAL: 0.5
+    RESTRICTED: 1.0
+  action_severity:
+    READ_RECORD: 0.0
+    UPDATE_RECORD: 0.5
+    EXPORT_DATA: 0.75
+    SEND_MESSAGE: 0.5
+    DELETE_RECORD: 1.0
+  exposure_scope:
+    INTERNAL: 0.0
+    CONTROLLED_EXTERNAL: 0.5
+    EXTERNAL: 1.0
+  contextual_risk:
+    NORMAL: 0.0
+    UNUSUAL: 0.33
+    HIGH_VOLUME: 0.67
+    ANOMALOUS: 1.0
+
+selected_configuration:
+  weight_candidate: equal
+  weights:
+    sensitivity: 0.25
+    action_severity: 0.25
+    exposure_scope: 0.25
+    contextual_risk: 0.25
+  T1: 0.20
+  T2: 0.50
+
+calibration_procedure:
+  implementation: src/calibration.py
+  candidate_weight_count: 5
+  candidate_threshold_pair_count: 9
+  total_configuration_count: 45
+  weight_candidates:
+    equal: [0.25, 0.25, 0.25, 0.25]
+    data_exposure: [0.30, 0.20, 0.30, 0.20]
+    context_aware: [0.25, 0.20, 0.25, 0.30]
+    data_action: [0.30, 0.30, 0.20, 0.20]
+    exposure_context: [0.20, 0.20, 0.30, 0.30]
+  weight_order: [sensitivity, action_severity, exposure_scope, contextual_risk]
+  T1_candidates: [0.20, 0.30, 0.40]
+  T2_candidates: [0.50, 0.60, 0.70]
+  objective_penalties:
+    unsafe_automatic_allow: 100
+    prohibited_not_denied: 20
+    missed_correct_escalation: 8
+    unnecessary_escalation: 4
+    blocked_legitimate_completion: 10
+  selection_rule: >-
+    First minimize unsafe automatic ALLOW count. Among that security floor,
+    find minimum weighted loss. Treat loss within 2 points as similar, then
+    prefer the predetermined stability order (equal weights first), followed
+    by lower loss, greater threshold margin, lower T1, and lower T2.
+  near_tie_loss_tolerance: 2
+  machine_learning_used: false
+  final_dataset_used: false
+
+selected_pilot_outcome:
+  loss: 84
+  unsafe_automatic_allow: 0
+  prohibited_not_denied: 3
+  correct_escalation: 7
+  missed_correct_escalation: 1
+  unnecessary_escalation: 4
+  legitimate_direct_completion: 4
+  blocked_legitimate_completion: 0
+  exact_matches: 16
+  minimum_threshold_margin: 0.0
+
+similar_configurations:
+  count: 2
+  note: >-
+    Equal and data_exposure weights produced identical recorded pilot outcomes
+    at T1=0.20 and T2=0.50. Equal weights were selected by the declared
+    simplicity/stability preference, not by a negligible numerical advantage.
+  configurations:
+    - weight_candidate: equal
+      weights: [0.25, 0.25, 0.25, 0.25]
+      T1: 0.20
+      T2: 0.50
+      loss: 84
+    - weight_candidate: data_exposure
+      weights: [0.30, 0.20, 0.30, 0.20]
+      T1: 0.20
+      T2: 0.50
+      loss: 84
+

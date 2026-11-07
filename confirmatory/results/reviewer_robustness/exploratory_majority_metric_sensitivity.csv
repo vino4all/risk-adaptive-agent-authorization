@@ -1,0 +1,25 @@
+reference,method,metric,numerator,denominator,rate,analysis_role
+frozen_policy_all_60,risk_adaptive,UER,1,26,0.038461538461538464,post-confirmatory exploratory descriptive
+frozen_policy_all_60,risk_adaptive,LDCR,5,11,0.45454545454545453,post-confirmatory exploratory descriptive
+frozen_policy_all_60,risk_adaptive,OER,6,11,0.5454545454545454,post-confirmatory exploratory descriptive
+frozen_policy_all_60,risk_adaptive,CER,11,23,0.4782608695652174,post-confirmatory exploratory descriptive
+frozen_policy_all_60,context_aware_binary_abac,UER,0,26,0.0,post-confirmatory exploratory descriptive
+frozen_policy_all_60,context_aware_binary_abac,LDCR,11,11,1.0,post-confirmatory exploratory descriptive
+frozen_policy_all_60,context_aware_binary_abac,OER,0,11,0.0,post-confirmatory exploratory descriptive
+frozen_policy_all_60,context_aware_binary_abac,CER,0,23,0.0,post-confirmatory exploratory descriptive
+frozen_policy_consensus_subset,risk_adaptive,UER,1,26,0.038461538461538464,post-confirmatory exploratory descriptive
+frozen_policy_consensus_subset,risk_adaptive,LDCR,5,11,0.45454545454545453,post-confirmatory exploratory descriptive
+frozen_policy_consensus_subset,risk_adaptive,OER,6,11,0.5454545454545454,post-confirmatory exploratory descriptive
+frozen_policy_consensus_subset,risk_adaptive,CER,10,20,0.5,post-confirmatory exploratory descriptive
+frozen_policy_consensus_subset,context_aware_binary_abac,UER,0,26,0.0,post-confirmatory exploratory descriptive
+frozen_policy_consensus_subset,context_aware_binary_abac,LDCR,11,11,1.0,post-confirmatory exploratory descriptive
+frozen_policy_consensus_subset,context_aware_binary_abac,OER,0,11,0.0,post-confirmatory exploratory descriptive
+frozen_policy_consensus_subset,context_aware_binary_abac,CER,0,20,0.0,post-confirmatory exploratory descriptive
+human_majority_consensus_subset,risk_adaptive,UER,0,12,0.0,post-confirmatory exploratory descriptive
+human_majority_consensus_subset,risk_adaptive,LDCR,5,16,0.3125,post-confirmatory exploratory descriptive
+human_majority_consensus_subset,risk_adaptive,OER,9,16,0.5625,post-confirmatory exploratory descriptive
+human_majority_consensus_subset,risk_adaptive,CER,15,29,0.5172413793103449,post-confirmatory exploratory descriptive
+human_majority_consensus_subset,context_aware_binary_abac,UER,0,12,0.0,post-confirmatory exploratory descriptive
+human_majority_consensus_subset,context_aware_binary_abac,LDCR,11,16,0.6875,post-confirmatory exploratory descriptive
+human_majority_consensus_subset,context_aware_binary_abac,OER,0,16,0.0,post-confirmatory exploratory descriptive
+human_majority_consensus_subset,context_aware_binary_abac,CER,0,29,0.0,post-confirmatory exploratory descriptive

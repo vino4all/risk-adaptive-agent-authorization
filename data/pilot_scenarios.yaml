@@ -1,0 +1,280 @@
+# Separate calibration-only dataset. These scenario IDs are reserved and must
+# never be copied into data/scenarios.yaml or included in primary evaluation.
+_meta:
+  file: data/pilot_scenarios.yaml
+  schema_version: "0.2.0"
+  status: pilot-calibration-frozen
+  purpose: "select risk weights and primary thresholds before final evaluation"
+  dataset_partition: pilot
+  scenario_id_namespace: "P001-P024"
+  scenario_count: 24
+  ground_truth_source: data/policy_matrix.yaml#ground_truth_matrix
+  final_dataset_exclusion_required: true
+
+scenarios:
+  # ALLOW (8)
+  - scenario_id: P001
+    role: ANALYST
+    tool: READ_RECORD
+    sensitivity: INTERNAL
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ALLOW
+    description: Routine analyst read of an internal record.
+    rationale: "Policy matrix first match: GT-A001."
+    metadata: {dataset_partition: pilot, boundary_case: lowest modeled risk}
+
+  - scenario_id: P002
+    role: MANAGER
+    tool: READ_RECORD
+    sensitivity: CONFIDENTIAL
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ALLOW
+    description: Manager reads a confidential internal record in normal context.
+    rationale: "Policy matrix first match: GT-A002."
+    metadata: {dataset_partition: pilot, boundary_case: sensitivity increase without escalation}
+
+  - scenario_id: P003
+    role: ADMINISTRATOR
+    tool: READ_RECORD
+    sensitivity: RESTRICTED
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ALLOW
+    description: Administrator reads a restricted record internally.
+    rationale: "Policy matrix first match: GT-A002."
+    metadata: {dataset_partition: pilot, boundary_case: high sensitivity with low-impact action}
+
+  - scenario_id: P004
+    role: ANALYST
+    tool: UPDATE_RECORD
+    sensitivity: INTERNAL
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ALLOW
+    description: Analyst performs a routine update to internal data.
+    rationale: "Policy matrix first match: GT-A003."
+    metadata: {dataset_partition: pilot}
+
+  - scenario_id: P005
+    role: MANAGER
+    tool: UPDATE_RECORD
+    sensitivity: CONFIDENTIAL
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ALLOW
+    description: Manager updates confidential data through an internal workflow.
+    rationale: "Policy matrix first match: GT-A004."
+    metadata: {dataset_partition: pilot, boundary_case: confidential integrity change}
+
+  - scenario_id: P006
+    role: ADMINISTRATOR
+    tool: UPDATE_RECORD
+    sensitivity: RESTRICTED
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ALLOW
+    description: Administrator updates restricted data through an internal workflow.
+    rationale: "Policy matrix first match: GT-A004."
+    metadata: {dataset_partition: pilot, boundary_case: restricted integrity change by highest role}
+
+  - scenario_id: P007
+    role: ANALYST
+    tool: SEND_MESSAGE
+    sensitivity: INTERNAL
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ALLOW
+    description: Analyst sends an internal-only message containing internal data.
+    rationale: "Policy matrix first match: GT-A005."
+    metadata: {dataset_partition: pilot}
+
+  - scenario_id: P008
+    role: MANAGER
+    tool: SEND_MESSAGE
+    sensitivity: INTERNAL
+    destination: CONTROLLED_EXTERNAL
+    context_risk: NORMAL
+    ground_truth: ALLOW
+    description: Manager sends internal material through a controlled partner channel.
+    rationale: "Policy matrix first match: GT-A006."
+    metadata: {dataset_partition: pilot, boundary_case: controlled external allow boundary}
+
+  # ESCALATE (8)
+  - scenario_id: P009
+    role: ANALYST
+    tool: READ_RECORD
+    sensitivity: RESTRICTED
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ESCALATE
+    description: Analyst requests an internal read of restricted data.
+    rationale: "Policy matrix first match: GT-E011."
+    metadata: {dataset_partition: pilot, boundary_case: role boundary for restricted read}
+
+  - scenario_id: P010
+    role: MANAGER
+    tool: EXPORT_DATA
+    sensitivity: RESTRICTED
+    destination: CONTROLLED_EXTERNAL
+    context_risk: NORMAL
+    ground_truth: ESCALATE
+    description: Manager exports restricted data to a controlled partner.
+    rationale: "Policy matrix first match: GT-E009."
+    metadata: {dataset_partition: pilot, boundary_case: controlled disclosure boundary}
+
+  - scenario_id: P011
+    role: ADMINISTRATOR
+    tool: DELETE_RECORD
+    sensitivity: CONFIDENTIAL
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ESCALATE
+    description: Administrator requests deletion of a confidential internal record.
+    rationale: "Policy matrix first match: GT-E014."
+    metadata: {dataset_partition: pilot, boundary_case: destructive approval boundary}
+
+  - scenario_id: P012
+    role: ADMINISTRATOR
+    tool: EXPORT_DATA
+    sensitivity: RESTRICTED
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: ESCALATE
+    description: Administrator exports restricted data within the organization.
+    rationale: "Policy matrix first match: GT-E013."
+    metadata: {dataset_partition: pilot, boundary_case: restricted export boundary}
+
+  - scenario_id: P013
+    role: MANAGER
+    tool: SEND_MESSAGE
+    sensitivity: INTERNAL
+    destination: EXTERNAL
+    context_risk: NORMAL
+    ground_truth: ESCALATE
+    description: Manager sends internal data to an unmanaged external destination.
+    rationale: "Policy matrix first match: GT-E007."
+    metadata: {dataset_partition: pilot, boundary_case: unmanaged external boundary}
+
+  - scenario_id: P014
+    role: ADMINISTRATOR
+    tool: READ_RECORD
+    sensitivity: INTERNAL
+    destination: INTERNAL
+    context_risk: ANOMALOUS
+    ground_truth: ESCALATE
+    description: Administrator performs a low-impact internal read in anomalous context.
+    rationale: "Policy matrix first match: GT-E001."
+    metadata: {dataset_partition: pilot, boundary_case: residual anomaly boundary}
+
+  - scenario_id: P015
+    role: MANAGER
+    tool: READ_RECORD
+    sensitivity: CONFIDENTIAL
+    destination: INTERNAL
+    context_risk: HIGH_VOLUME
+    ground_truth: ESCALATE
+    description: Manager performs a high-volume read of confidential data.
+    rationale: "Policy matrix first match: GT-E002."
+    metadata: {dataset_partition: pilot, boundary_case: bulk-access boundary}
+
+  - scenario_id: P016
+    role: ADMINISTRATOR
+    tool: UPDATE_RECORD
+    sensitivity: CONFIDENTIAL
+    destination: INTERNAL
+    context_risk: UNUSUAL
+    ground_truth: ESCALATE
+    description: Administrator updates confidential data under unusual context.
+    rationale: "Policy matrix first match: GT-E004."
+    metadata: {dataset_partition: pilot, boundary_case: unusual-context boundary}
+
+  # DENY (8)
+  - scenario_id: P017
+    role: ANALYST
+    tool: EXPORT_DATA
+    sensitivity: RESTRICTED
+    destination: EXTERNAL
+    context_risk: HIGH_VOLUME
+    ground_truth: DENY
+    description: Analyst performs a high-volume restricted export externally.
+    rationale: "Policy matrix first match: GT-D004."
+    metadata: {dataset_partition: pilot, boundary_case: prohibited disclosure extreme}
+
+  - scenario_id: P018
+    role: ADMINISTRATOR
+    tool: EXPORT_DATA
+    sensitivity: INTERNAL
+    destination: INTERNAL
+    context_risk: ANOMALOUS
+    ground_truth: DENY
+    description: Administrator initiates an internal export in anomalous context.
+    rationale: "Policy matrix first match: GT-D002."
+    metadata: {dataset_partition: pilot, boundary_case: anomaly changes escalation to denial}
+
+  - scenario_id: P019
+    role: MANAGER
+    tool: UPDATE_RECORD
+    sensitivity: INTERNAL
+    destination: CONTROLLED_EXTERNAL
+    context_risk: NORMAL
+    ground_truth: DENY
+    description: Manager attempts an update through a controlled external destination.
+    rationale: "Policy matrix first match: GT-D999 fail-closed default."
+    metadata: {dataset_partition: pilot, boundary_case: fail-closed combination}
+
+  - scenario_id: P020
+    role: ANALYST
+    tool: DELETE_RECORD
+    sensitivity: INTERNAL
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: DENY
+    description: Analyst requests deletion of an internal record.
+    rationale: "Policy matrix first match: GT-D009."
+    metadata: {dataset_partition: pilot, boundary_case: role boundary for deletion}
+
+  - scenario_id: P021
+    role: MANAGER
+    tool: DELETE_RECORD
+    sensitivity: RESTRICTED
+    destination: INTERNAL
+    context_risk: NORMAL
+    ground_truth: DENY
+    description: Manager requests deletion of a restricted record.
+    rationale: "Policy matrix first match: GT-D010."
+    metadata: {dataset_partition: pilot, boundary_case: restricted destructive boundary}
+
+  - scenario_id: P022
+    role: ADMINISTRATOR
+    tool: SEND_MESSAGE
+    sensitivity: RESTRICTED
+    destination: EXTERNAL
+    context_risk: NORMAL
+    ground_truth: DENY
+    description: Administrator sends restricted data to an unmanaged destination.
+    rationale: "Policy matrix first match: GT-D004."
+    metadata: {dataset_partition: pilot, boundary_case: role cannot override hard prohibition}
+
+  - scenario_id: P023
+    role: ANALYST
+    tool: SEND_MESSAGE
+    sensitivity: CONFIDENTIAL
+    destination: EXTERNAL
+    context_risk: NORMAL
+    ground_truth: DENY
+    description: Analyst sends confidential data to an unmanaged destination.
+    rationale: "Policy matrix first match: GT-D008."
+    metadata: {dataset_partition: pilot, boundary_case: analyst disclosure prohibition}
+
+  - scenario_id: P024
+    role: MANAGER
+    tool: EXPORT_DATA
+    sensitivity: CONFIDENTIAL
+    destination: EXTERNAL
+    context_risk: NORMAL
+    ground_truth: DENY
+    description: Manager exports confidential data to an unmanaged destination.
+    rationale: "Policy matrix first match: GT-D005."
+    metadata: {dataset_partition: pilot, boundary_case: confidential bulk disclosure prohibition}

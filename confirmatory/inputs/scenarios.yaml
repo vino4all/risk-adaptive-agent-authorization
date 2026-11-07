@@ -1,0 +1,2461 @@
+_meta:
+  file: data/scenarios.yaml
+  schema_version: 1.0.0
+  status: final-dataset-authored-not-evaluated
+  scenario_count: 150
+  dataset_partition: final
+  ground_truth_source: data/policy_matrix.yaml#ground_truth_matrix
+  pilot_scenarios_excluded: true
+  authorization_algorithms_run: false
+scenarios:
+- scenario_id: F001
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to send a message containing payment credentials within the internal environment
+    during a routine workflow.
+  rationale: 'GT-A003: Managers may read or internally message Restricted data in normal context. Managers
+    have business authority for limited internal Restricted-data handling, while Restricted updates and
+    exports require approval.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-A003
+  metadata:
+    dataset_partition: final
+- scenario_id: F002
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Analyst proposes to read product catalog through a controlled partner channel during a
+    routine workflow.
+  rationale: 'GT-A006: Internal data may be read or messaged through controlled external channels. Controlled
+    external channels are acceptable for low-sensitivity routine disclosure when the operation is not
+    bulk export.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-A006
+  metadata:
+    dataset_partition: final
+- scenario_id: F003
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to update personnel cases within the internal environment during
+    a routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: personnel_cases
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F004
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to export workflow queue through a controlled partner channel during a
+    routine workflow.
+  rationale: 'GT-A007: Managers and Administrators may export Internal data to controlled external channels.
+    Higher role authority supports normal controlled-partner export of Internal data.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-A007
+  metadata:
+    dataset_partition: final
+- scenario_id: F005
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Analyst proposes to send a message containing customer accounts within the internal environment
+    during a routine workflow.
+  rationale: 'GT-A004: Analysts may read or internally message non-Restricted data in normal context.
+    Routine Analyst workflows include reading and internal messaging for Internal and Confidential data.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-A004
+  metadata:
+    dataset_partition: final
+- scenario_id: F006
+  role: ADMINISTRATOR
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to read product catalog through a controlled partner channel during
+    a routine workflow.
+  rationale: 'GT-A006: Internal data may be read or messaged through controlled external channels. Controlled
+    external channels are acceptable for low-sensitivity routine disclosure when the operation is not
+    bulk export.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-A006
+  metadata:
+    dataset_partition: final
+- scenario_id: F007
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to export personnel cases within the internal environment during a routine
+    workflow.
+  rationale: 'GT-A002: Managers may perform routine internal operations on Internal or Confidential data.
+    Manager authority covers normal internal business operations on data up to Confidential sensitivity.'
+  resource: personnel_cases
+  policy_rule_ids:
+  - GT-A002
+  metadata:
+    dataset_partition: final
+- scenario_id: F008
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to send a message containing regulated identity records within the
+    internal environment during a routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F009
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to export operations schedule through a controlled partner channel
+    during a routine workflow.
+  rationale: 'GT-A007: Managers and Administrators may export Internal data to controlled external channels.
+    Higher role authority supports normal controlled-partner export of Internal data.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-A007
+  metadata:
+    dataset_partition: final
+- scenario_id: F010
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to read privileged audit logs within the internal environment during a
+    routine workflow.
+  rationale: 'GT-A003: Managers may read or internally message Restricted data in normal context. Managers
+    have business authority for limited internal Restricted-data handling, while Restricted updates and
+    exports require approval.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-A003
+  metadata:
+    dataset_partition: final
+- scenario_id: F011
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Analyst proposes to send a message containing employee directory through a controlled partner
+    channel during a routine workflow.
+  rationale: 'GT-A006: Internal data may be read or messaged through controlled external channels. Controlled
+    external channels are acceptable for low-sensitivity routine disclosure when the operation is not
+    bulk export.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-A006
+  metadata:
+    dataset_partition: final
+- scenario_id: F012
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to update workflow queue within the internal environment during a routine
+    workflow.
+  rationale: 'GT-A002: Managers may perform routine internal operations on Internal or Confidential data.
+    Manager authority covers normal internal business operations on data up to Confidential sensitivity.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-A002
+  metadata:
+    dataset_partition: final
+- scenario_id: F013
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Analyst proposes to read customer accounts within the internal environment during a routine
+    workflow.
+  rationale: 'GT-A004: Analysts may read or internally message non-Restricted data in normal context.
+    Routine Analyst workflows include reading and internal messaging for Internal and Confidential data.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-A004
+  metadata:
+    dataset_partition: final
+- scenario_id: F014
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to export contract records within the internal environment during
+    a routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F015
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to send a message containing employee directory through a controlled
+    partner channel during a routine workflow.
+  rationale: 'GT-A006: Internal data may be read or messaged through controlled external channels. Controlled
+    external channels are acceptable for low-sensitivity routine disclosure when the operation is not
+    bulk export.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-A006
+  metadata:
+    dataset_partition: final
+- scenario_id: F016
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to read workflow queue through a controlled partner channel during a routine
+    workflow.
+  rationale: 'GT-A006: Internal data may be read or messaged through controlled external channels. Controlled
+    external channels are acceptable for low-sensitivity routine disclosure when the operation is not
+    bulk export.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-A006
+  metadata:
+    dataset_partition: final
+- scenario_id: F017
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to update operations schedule within the internal environment during
+    a routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F018
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to send a message containing contract records within the internal environment
+    during a routine workflow.
+  rationale: 'GT-A002: Managers may perform routine internal operations on Internal or Confidential data.
+    Manager authority covers normal internal business operations on data up to Confidential sensitivity.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-A002
+  metadata:
+    dataset_partition: final
+- scenario_id: F019
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Analyst proposes to export employee directory within the internal environment during a
+    routine workflow.
+  rationale: 'GT-A005: Analysts may update or internally export Internal data in normal context. Internal-data
+    updates and internal exports are within routine Analyst authority when no unusual context is present.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-A005
+  metadata:
+    dataset_partition: final
+- scenario_id: F020
+  role: ADMINISTRATOR
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to read support transcripts within the internal environment during
+    a routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F021
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to send a message containing customer accounts within the internal
+    environment during a routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F022
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to export product catalog within the internal environment during a routine
+    workflow.
+  rationale: 'GT-A002: Managers may perform routine internal operations on Internal or Confidential data.
+    Manager authority covers normal internal business operations on data up to Confidential sensitivity.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-A002
+  metadata:
+    dataset_partition: final
+- scenario_id: F023
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to read employee directory within the internal environment during a routine
+    workflow.
+  rationale: 'GT-A002: Managers may perform routine internal operations on Internal or Confidential data.
+    Manager authority covers normal internal business operations on data up to Confidential sensitivity.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-A002
+  metadata:
+    dataset_partition: final
+- scenario_id: F024
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to export workflow queue within the internal environment during
+    a routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F025
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Manager proposes to send a message containing operations schedule within the internal environment
+    during a routine workflow.
+  rationale: 'GT-A002: Managers may perform routine internal operations on Internal or Confidential data.
+    Manager authority covers normal internal business operations on data up to Confidential sensitivity.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-A002
+  metadata:
+    dataset_partition: final
+- scenario_id: F026
+  role: ADMINISTRATOR
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to read product catalog within the internal environment during a
+    routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F027
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: ALLOW
+  description: Administrator proposes to send a message containing employee directory within the internal
+    environment during a routine workflow.
+  rationale: 'GT-A001: Administrators may perform routine non-delete internal operations. Administrative
+    role authority covers normal internal operations unless an earlier disclosure or Restricted-export
+    boundary applies.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-A001
+  metadata:
+    dataset_partition: final
+- scenario_id: F028
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Analyst proposes to update support transcripts to an unmanaged external destination under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F029
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Manager proposes to update payment credentials through a controlled partner channel as
+    part of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F030
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Analyst proposes to read contract records to an unmanaged external destination as part
+    of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F031
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to update personnel cases to an unmanaged external destination under an
+    unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: personnel_cases
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F032
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Administrator proposes to update regulated identity records through a controlled partner
+    channel as part of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F033
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Analyst proposes to read customer accounts to an unmanaged external destination under an
+    unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F034
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to update privileged audit logs through a controlled partner channel under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F035
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to export security incidents through a controlled partner channel under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F036
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Administrator proposes to send a message containing support transcripts to an unmanaged
+    external destination as part of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F037
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Analyst proposes to update operations schedule to an unmanaged external destination under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E005: Unusual side-effecting operations require approval. Integrity-changing, disclosure,
+    or destructive operations require additional scrutiny under unusual context.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-E005
+  metadata:
+    dataset_partition: final
+- scenario_id: F038
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Manager proposes to delete contract records within the internal environment as part of
+    a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F039
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to export security incidents through a controlled partner channel
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F040
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Analyst proposes to read workflow queue to an unmanaged external destination as part of
+    a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F041
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Analyst proposes to update customer accounts through a controlled partner channel as part
+    of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F042
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Administrator proposes to delete contract records within the internal environment as part
+    of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F043
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to send a message containing security incidents through a controlled partner
+    channel under an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F044
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Analyst proposes to read workflow queue to an unmanaged external destination under an unusual
+    but plausible workflow condition.
+  rationale: 'GT-E006: Unusual external-scope operations require approval. External scope under atypical
+    conditions needs an explicit reviewer.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-E006
+  metadata:
+    dataset_partition: final
+- scenario_id: F045
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to update payment credentials through a controlled partner channel
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F046
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Analyst proposes to send a message containing contract records within the internal environment
+    under anomalous execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F047
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Manager proposes to export employee directory to an unmanaged external destination as part
+    of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F048
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to delete support transcripts within the internal environment under an
+    unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F049
+  role: ADMINISTRATOR
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Administrator proposes to read payment credentials through a controlled partner channel
+    as part of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F050
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Administrator proposes to export product catalog to an unmanaged external destination as
+    part of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F051
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Analyst proposes to read personnel cases within the internal environment under anomalous
+    execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: personnel_cases
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F052
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Manager proposes to send a message containing regulated identity records through a controlled
+    partner channel as part of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F053
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to update customer accounts to an unmanaged external destination
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F054
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Analyst proposes to send a message containing product catalog within the internal environment
+    under anomalous execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F055
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to export employee directory to an unmanaged external destination under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E005: Unusual side-effecting operations require approval. Integrity-changing, disclosure,
+    or destructive operations require additional scrutiny under unusual context.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-E005
+  metadata:
+    dataset_partition: final
+- scenario_id: F056
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Manager proposes to read regulated identity records through a controlled partner channel
+    as part of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F057
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to delete customer accounts within the internal environment under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F058
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Administrator proposes to send a message containing privileged audit logs through a controlled
+    partner channel as part of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F059
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Analyst proposes to read employee directory within the internal environment under anomalous
+    execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F060
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Analyst proposes to update support transcripts through a controlled partner channel under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F061
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to export operations schedule to an unmanaged external destination
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-E005: Unusual side-effecting operations require approval. Integrity-changing, disclosure,
+    or destructive operations require additional scrutiny under unusual context.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-E005
+  metadata:
+    dataset_partition: final
+- scenario_id: F062
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Manager proposes to delete product catalog within the internal environment as part of a
+    high-volume operation.
+  rationale: 'GT-E016: Internal deletes by authorized roles require approval. Deletes are destructive;
+    valid delete workflows require human approval.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-E016
+  metadata:
+    dataset_partition: final
+- scenario_id: F063
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Manager proposes to send a message containing personnel cases to an unmanaged external
+    destination as part of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: personnel_cases
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F064
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Analyst proposes to export support transcripts through a controlled partner channel under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F065
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Manager proposes to send a message containing customer accounts within the internal environment
+    under anomalous execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F066
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to update product catalog to an unmanaged external destination under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E005: Unusual side-effecting operations require approval. Integrity-changing, disclosure,
+    or destructive operations require additional scrutiny under unusual context.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-E005
+  metadata:
+    dataset_partition: final
+- scenario_id: F067
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to read security incidents through a controlled partner channel under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F068
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Administrator proposes to delete workflow queue within the internal environment as part
+    of a high-volume operation.
+  rationale: 'GT-E016: Internal deletes by authorized roles require approval. Deletes are destructive;
+    valid delete workflows require human approval.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-E016
+  metadata:
+    dataset_partition: final
+- scenario_id: F069
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Analyst proposes to export operations schedule through a controlled partner channel as
+    part of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F070
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Administrator proposes to send a message containing contract records within the internal
+    environment under anomalous execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F071
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ESCALATE
+  description: Manager proposes to update security incidents through a controlled partner channel during
+    a routine workflow.
+  rationale: 'GT-E009: Controlled external handling of sensitive data requires approval. Managed partner
+    channels can be legitimate, but sensitive data crossing the boundary requires approval.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-E009
+  metadata:
+    dataset_partition: final
+- scenario_id: F072
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Analyst proposes to read regulated identity records within the internal environment as
+    part of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F073
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to update operations schedule to an unmanaged external destination under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E005: Unusual side-effecting operations require approval. Integrity-changing, disclosure,
+    or destructive operations require additional scrutiny under unusual context.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-E005
+  metadata:
+    dataset_partition: final
+- scenario_id: F074
+  role: ADMINISTRATOR
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Administrator proposes to read contract records within the internal environment under anomalous
+    execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F075
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to send a message containing security incidents through a controlled
+    partner channel under an unusual but plausible workflow condition.
+  rationale: 'GT-E004: Unusual sensitive-data access requires approval. Sensitive operations under atypical
+    conditions may be legitimate but should not be auto-approved.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-E004
+  metadata:
+    dataset_partition: final
+- scenario_id: F076
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Manager proposes to read support transcripts to an unmanaged external destination as part
+    of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F077
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Analyst proposes to export operations schedule through a controlled partner channel under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E005: Unusual side-effecting operations require approval. Integrity-changing, disclosure,
+    or destructive operations require additional scrutiny under unusual context.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-E005
+  metadata:
+    dataset_partition: final
+- scenario_id: F078
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to update privileged audit logs through a controlled partner channel
+    during a routine workflow.
+  rationale: 'GT-E009: Controlled external handling of sensitive data requires approval. Managed partner
+    channels can be legitimate, but sensitive data crossing the boundary requires approval.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-E009
+  metadata:
+    dataset_partition: final
+- scenario_id: F079
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Manager proposes to read personnel cases within the internal environment under anomalous
+    execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: personnel_cases
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F080
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Manager proposes to delete workflow queue within the internal environment under an unusual
+    but plausible workflow condition.
+  rationale: 'GT-E005: Unusual side-effecting operations require approval. Integrity-changing, disclosure,
+    or destructive operations require additional scrutiny under unusual context.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-E005
+  metadata:
+    dataset_partition: final
+- scenario_id: F081
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: ESCALATE
+  description: Administrator proposes to export payment credentials through a controlled partner channel
+    during a routine workflow.
+  rationale: 'GT-E009: Controlled external handling of sensitive data requires approval. Managed partner
+    channels can be legitimate, but sensitive data crossing the boundary requires approval.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-E009
+  metadata:
+    dataset_partition: final
+- scenario_id: F082
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Analyst proposes to send a message containing contract records through a controlled partner
+    channel as part of a high-volume operation.
+  rationale: 'GT-E003: High-volume handling of sensitive data requires approval. Sensitive data in bulk
+    form needs reviewer confirmation unless a DENY rule has already prohibited the action.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-E003
+  metadata:
+    dataset_partition: final
+- scenario_id: F083
+  role: ADMINISTRATOR
+  tool: READ_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: ESCALATE
+  description: Administrator proposes to read personnel cases to an unmanaged external destination as
+    part of a high-volume operation.
+  rationale: 'GT-E002: High-volume reads or exports require approval. Bulk access can amplify disclosure
+    even when the operation is otherwise legitimate.'
+  resource: personnel_cases
+  policy_rule_ids:
+  - GT-E002
+  metadata:
+    dataset_partition: final
+- scenario_id: F084
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: ESCALATE
+  description: Manager proposes to send a message containing workflow queue within the internal environment
+    under anomalous execution conditions.
+  rationale: 'GT-E001: Residual anomalous activity requires human review. Any anomalous case not already
+    prohibited may be legitimate but cannot be safely permitted automatically.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-E001
+  metadata:
+    dataset_partition: final
+- scenario_id: F085
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: ESCALATE
+  description: Analyst proposes to update operations schedule through a controlled partner channel under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-E005: Unusual side-effecting operations require approval. Integrity-changing, disclosure,
+    or destructive operations require additional scrutiny under unusual context.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-E005
+  metadata:
+    dataset_partition: final
+- scenario_id: F086
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to delete privileged audit logs to an unmanaged external destination under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F087
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to delete security incidents to an unmanaged external destination under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F088
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to delete regulated identity records to an unmanaged external destination
+    under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F089
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to delete customer accounts to an unmanaged external destination under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F090
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to delete privileged audit logs through a controlled partner channel under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F091
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to export security incidents to an unmanaged external destination under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F092
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to update regulated identity records to an unmanaged external destination
+    under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F093
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to delete customer accounts to an unmanaged external destination under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F094
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to delete privileged audit logs through a controlled partner channel
+    under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F095
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Analyst proposes to delete security incidents to an unmanaged external destination during
+    a routine workflow.
+  rationale: 'GT-D004: Restricted data may not be sent to unmanaged external destinations. External disclosure
+    of Restricted data is outside the permitted policy envelope regardless of role or operation.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D004
+  metadata:
+    dataset_partition: final
+- scenario_id: F096
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to export regulated identity records to an unmanaged external destination
+    under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F097
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to delete customer accounts to an unmanaged external destination
+    under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F098
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to send a message containing privileged audit logs to an unmanaged external
+    destination under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F099
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to delete security incidents through a controlled partner channel under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F100
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Analyst proposes to update regulated identity records to an unmanaged external destination
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-D004: Restricted data may not be sent to unmanaged external destinations. External disclosure
+    of Restricted data is outside the permitted policy envelope regardless of role or operation.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-D004
+  metadata:
+    dataset_partition: final
+- scenario_id: F101
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to delete customer accounts through a controlled partner channel under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F102
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Analyst proposes to export product catalog to an unmanaged external destination as part
+    of a high-volume operation.
+  rationale: 'GT-D008: Analysts may not disclose data to unmanaged external destinations. Least privilege
+    excludes unmanaged external disclosure by Analysts.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-D008
+  metadata:
+    dataset_partition: final
+- scenario_id: F103
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Administrator proposes to export security incidents to an unmanaged external destination
+    as part of a high-volume operation.
+  rationale: 'GT-D004: Restricted data may not be sent to unmanaged external destinations. External disclosure
+    of Restricted data is outside the permitted policy envelope regardless of role or operation.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D004
+  metadata:
+    dataset_partition: final
+- scenario_id: F104
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to delete regulated identity records within the internal environment under
+    anomalous execution conditions.
+  rationale: 'GT-D002: Anomalous high-impact operations are prohibited. Integrity-changing, bulk-disclosure,
+    and destructive operations are not safe to execute under anomalous context.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-D002
+  metadata:
+    dataset_partition: final
+- scenario_id: F105
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to update payment credentials to an unmanaged external destination under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F106
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Analyst proposes to export contract records to an unmanaged external destination as part
+    of a high-volume operation.
+  rationale: 'GT-D005: Confidential bulk export to unmanaged external destinations is prohibited. Bulk
+    export creates a broad disclosure path that is not acceptable for Confidential information outside
+    managed channels.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-D005
+  metadata:
+    dataset_partition: final
+- scenario_id: F107
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to delete personnel cases through a controlled partner channel under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: personnel_cases
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F108
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Analyst proposes to update regulated identity records through a controlled partner channel
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-D006: Analysts may not modify or disclose Restricted data. Analyst authority is limited
+    to routine work and does not include Restricted-data modification, export, or messaging.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-D006
+  metadata:
+    dataset_partition: final
+- scenario_id: F109
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Manager proposes to delete payment credentials to an unmanaged external destination during
+    a routine workflow.
+  rationale: 'GT-D004: Restricted data may not be sent to unmanaged external destinations. External disclosure
+    of Restricted data is outside the permitted policy envelope regardless of role or operation.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-D004
+  metadata:
+    dataset_partition: final
+- scenario_id: F110
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Analyst proposes to send a message containing product catalog to an unmanaged external
+    destination as part of a high-volume operation.
+  rationale: 'GT-D008: Analysts may not disclose data to unmanaged external destinations. Least privilege
+    excludes unmanaged external disclosure by Analysts.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-D008
+  metadata:
+    dataset_partition: final
+- scenario_id: F111
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Administrator proposes to update employee directory through a controlled partner channel
+    as part of a high-volume operation.
+  rationale: 'GT-D999: Fail-closed default for cases not explicitly permitted or escalated. Unmatched
+    combinations are not automatically legitimate.  They remain prohibited until the qualitative policy
+    is explicitly extended.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-D999
+  metadata:
+    dataset_partition: final
+- scenario_id: F112
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to delete support transcripts through a controlled partner channel under
+    anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F113
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Analyst proposes to export operations schedule to an unmanaged external destination under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-D008: Analysts may not disclose data to unmanaged external destinations. Least privilege
+    excludes unmanaged external disclosure by Analysts.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-D008
+  metadata:
+    dataset_partition: final
+- scenario_id: F114
+  role: ADMINISTRATOR
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Administrator proposes to read privileged audit logs to an unmanaged external destination
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-D004: Restricted data may not be sent to unmanaged external destinations. External disclosure
+    of Restricted data is outside the permitted policy envelope regardless of role or operation.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D004
+  metadata:
+    dataset_partition: final
+- scenario_id: F115
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Manager proposes to delete security incidents within the internal environment as part of
+    a high-volume operation.
+  rationale: 'GT-D010: Restricted records may not be deleted through this automated path. Restricted deletes
+    are prohibited in the modeled runtime authorization policy rather than merely escalated.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D010
+  metadata:
+    dataset_partition: final
+- scenario_id: F116
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Analyst proposes to update workflow queue to an unmanaged external destination under anomalous
+    execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F117
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Administrator proposes to delete customer accounts through a controlled partner channel
+    during a routine workflow.
+  rationale: 'GT-D011: Deletes are prohibited for non-internal destinations. Destructive actions must
+    remain inside internal administrative channels.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-D011
+  metadata:
+    dataset_partition: final
+- scenario_id: F118
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Analyst proposes to read privileged audit logs through a controlled partner channel under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-D007: Analysts may not route Restricted data to controlled external parties. Partner-channel
+    handling of Restricted data requires higher role authority and approval.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D007
+  metadata:
+    dataset_partition: final
+- scenario_id: F119
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Manager proposes to send a message containing employee directory within the internal environment
+    as part of a high-volume operation.
+  rationale: 'GT-D999: Fail-closed default for cases not explicitly permitted or escalated. Unmatched
+    combinations are not automatically legitimate.  They remain prohibited until the qualitative policy
+    is explicitly extended.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-D999
+  metadata:
+    dataset_partition: final
+- scenario_id: F120
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to export support transcripts to an unmanaged external destination
+    under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F121
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Analyst proposes to delete payment credentials within the internal environment during a
+    routine workflow.
+  rationale: 'GT-D009: Analysts may not delete records. Delete authority is destructive and outside Analyst
+    privileges.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-D009
+  metadata:
+    dataset_partition: final
+- scenario_id: F122
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Manager proposes to export contract records to an unmanaged external destination under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-D005: Confidential bulk export to unmanaged external destinations is prohibited. Bulk
+    export creates a broad disclosure path that is not acceptable for Confidential information outside
+    managed channels.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-D005
+  metadata:
+    dataset_partition: final
+- scenario_id: F123
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Administrator proposes to send a message containing employee directory through a controlled
+    partner channel as part of a high-volume operation.
+  rationale: 'GT-D999: Fail-closed default for cases not explicitly permitted or escalated. Unmatched
+    combinations are not automatically legitimate.  They remain prohibited until the qualitative policy
+    is explicitly extended.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-D999
+  metadata:
+    dataset_partition: final
+- scenario_id: F124
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to read regulated identity records within the internal environment under
+    anomalous execution conditions.
+  rationale: 'GT-D003: Anomalous access to Restricted data is prohibited. Restricted data requires a stronger
+    response to contextual anomaly than routine manual approval.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-D003
+  metadata:
+    dataset_partition: final
+- scenario_id: F125
+  role: ANALYST
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Analyst proposes to update operations schedule through a controlled partner channel during
+    a routine workflow.
+  rationale: 'GT-D999: Fail-closed default for cases not explicitly permitted or escalated. Unmatched
+    combinations are not automatically legitimate.  They remain prohibited until the qualitative policy
+    is explicitly extended.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-D999
+  metadata:
+    dataset_partition: final
+- scenario_id: F126
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Administrator proposes to delete contract records to an unmanaged external destination
+    during a routine workflow.
+  rationale: 'GT-D011: Deletes are prohibited for non-internal destinations. Destructive actions must
+    remain inside internal administrative channels.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-D011
+  metadata:
+    dataset_partition: final
+- scenario_id: F127
+  role: MANAGER
+  tool: EXPORT_DATA
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Manager proposes to export security incidents within the internal environment as part of
+    a high-volume operation.
+  rationale: 'GT-D012: High-volume Restricted exports are prohibited. Bulk export of Restricted data creates
+    unacceptable disclosure impact.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D012
+  metadata:
+    dataset_partition: final
+- scenario_id: F128
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Analyst proposes to send a message containing workflow queue to an unmanaged external destination
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-D008: Analysts may not disclose data to unmanaged external destinations. Least privilege
+    excludes unmanaged external disclosure by Analysts.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-D008
+  metadata:
+    dataset_partition: final
+- scenario_id: F129
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to update customer accounts through a controlled partner channel
+    under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F130
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Analyst proposes to read privileged audit logs through a controlled partner channel during
+    a routine workflow.
+  rationale: 'GT-D007: Analysts may not route Restricted data to controlled external parties. Partner-channel
+    handling of Restricted data requires higher role authority and approval.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D007
+  metadata:
+    dataset_partition: final
+- scenario_id: F131
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to update employee directory within the internal environment under anomalous
+    execution conditions.
+  rationale: 'GT-D002: Anomalous high-impact operations are prohibited. Integrity-changing, bulk-disclosure,
+    and destructive operations are not safe to execute under anomalous context.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-D002
+  metadata:
+    dataset_partition: final
+- scenario_id: F132
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Administrator proposes to export support transcripts to an unmanaged external destination
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-D005: Confidential bulk export to unmanaged external destinations is prohibited. Bulk
+    export creates a broad disclosure path that is not acceptable for Confidential information outside
+    managed channels.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-D005
+  metadata:
+    dataset_partition: final
+- scenario_id: F133
+  role: ANALYST
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Analyst proposes to send a message containing payment credentials within the internal environment
+    as part of a high-volume operation.
+  rationale: 'GT-D006: Analysts may not modify or disclose Restricted data. Analyst authority is limited
+    to routine work and does not include Restricted-data modification, export, or messaging.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-D006
+  metadata:
+    dataset_partition: final
+- scenario_id: F134
+  role: MANAGER
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Manager proposes to delete contract records to an unmanaged external destination during
+    a routine workflow.
+  rationale: 'GT-D011: Deletes are prohibited for non-internal destinations. Destructive actions must
+    remain inside internal administrative channels.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-D011
+  metadata:
+    dataset_partition: final
+- scenario_id: F135
+  role: ADMINISTRATOR
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to read employee directory through a controlled partner channel
+    under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F136
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: INTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Analyst proposes to export support transcripts within the internal environment as part
+    of a high-volume operation.
+  rationale: 'GT-D013: Analyst high-volume export of sensitive data is prohibited. High-volume sensitive
+    exports exceed Analyst authority.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-D013
+  metadata:
+    dataset_partition: final
+- scenario_id: F137
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Manager proposes to update payment credentials to an unmanaged external destination under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-D004: Restricted data may not be sent to unmanaged external destinations. External disclosure
+    of Restricted data is outside the permitted policy envelope regardless of role or operation.'
+  resource: payment_credentials
+  policy_rule_ids:
+  - GT-D004
+  metadata:
+    dataset_partition: final
+- scenario_id: F138
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to send a message containing product catalog through a controlled
+    partner channel under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: product_catalog
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F139
+  role: ADMINISTRATOR
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Administrator proposes to delete security incidents within the internal environment during
+    a routine workflow.
+  rationale: 'GT-D010: Restricted records may not be deleted through this automated path. Restricted deletes
+    are prohibited in the modeled runtime authorization policy rather than merely escalated.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D010
+  metadata:
+    dataset_partition: final
+- scenario_id: F140
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Manager proposes to read workflow queue to an unmanaged external destination during a routine
+    workflow.
+  rationale: 'GT-D999: Fail-closed default for cases not explicitly permitted or escalated. Unmatched
+    combinations are not automatically legitimate.  They remain prohibited until the qualitative policy
+    is explicitly extended.'
+  resource: workflow_queue
+  policy_rule_ids:
+  - GT-D999
+  metadata:
+    dataset_partition: final
+- scenario_id: F141
+  role: ANALYST
+  tool: EXPORT_DATA
+  sensitivity: CONFIDENTIAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Analyst proposes to export customer accounts through a controlled partner channel as part
+    of a high-volume operation.
+  rationale: 'GT-D013: Analyst high-volume export of sensitive data is prohibited. High-volume sensitive
+    exports exceed Analyst authority.'
+  resource: customer_accounts
+  policy_rule_ids:
+  - GT-D013
+  metadata:
+    dataset_partition: final
+- scenario_id: F142
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Analyst proposes to delete privileged audit logs within the internal environment under
+    an unusual but plausible workflow condition.
+  rationale: 'GT-D009: Analysts may not delete records. Delete authority is destructive and outside Analyst
+    privileges.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D009
+  metadata:
+    dataset_partition: final
+- scenario_id: F143
+  role: MANAGER
+  tool: UPDATE_RECORD
+  sensitivity: INTERNAL
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Manager proposes to update employee directory through a controlled partner channel as part
+    of a high-volume operation.
+  rationale: 'GT-D999: Fail-closed default for cases not explicitly permitted or escalated. Unmatched
+    combinations are not automatically legitimate.  They remain prohibited until the qualitative policy
+    is explicitly extended.'
+  resource: employee_directory
+  policy_rule_ids:
+  - GT-D999
+  metadata:
+    dataset_partition: final
+- scenario_id: F144
+  role: ADMINISTRATOR
+  tool: SEND_MESSAGE
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Administrator proposes to send a message containing support transcripts to an unmanaged
+    external destination under anomalous execution conditions.
+  rationale: 'GT-D001: Anomalous behavior cannot cross organizational disclosure boundaries. An anomalous
+    context combined with any external or partner destination is prohibited rather than routed to automatic
+    approval.'
+  resource: support_transcripts
+  policy_rule_ids:
+  - GT-D001
+  metadata:
+    dataset_partition: final
+- scenario_id: F145
+  role: MANAGER
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: INTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Manager proposes to read operations schedule within the internal environment under an unusual
+    but plausible workflow condition.
+  rationale: 'GT-D999: Fail-closed default for cases not explicitly permitted or escalated. Unmatched
+    combinations are not automatically legitimate.  They remain prohibited until the qualitative policy
+    is explicitly extended.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-D999
+  metadata:
+    dataset_partition: final
+- scenario_id: F146
+  role: ANALYST
+  tool: DELETE_RECORD
+  sensitivity: CONFIDENTIAL
+  destination: EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Analyst proposes to delete contract records to an unmanaged external destination during
+    a routine workflow.
+  rationale: 'GT-D009: Analysts may not delete records. Delete authority is destructive and outside Analyst
+    privileges.'
+  resource: contract_records
+  policy_rule_ids:
+  - GT-D009
+  metadata:
+    dataset_partition: final
+- scenario_id: F147
+  role: ADMINISTRATOR
+  tool: EXPORT_DATA
+  sensitivity: RESTRICTED
+  destination: CONTROLLED_EXTERNAL
+  context_risk: HIGH_VOLUME
+  ground_truth: DENY
+  description: Administrator proposes to export security incidents through a controlled partner channel
+    as part of a high-volume operation.
+  rationale: 'GT-D012: High-volume Restricted exports are prohibited. Bulk export of Restricted data creates
+    unacceptable disclosure impact.'
+  resource: security_incidents
+  policy_rule_ids:
+  - GT-D012
+  metadata:
+    dataset_partition: final
+- scenario_id: F148
+  role: MANAGER
+  tool: SEND_MESSAGE
+  sensitivity: RESTRICTED
+  destination: INTERNAL
+  context_risk: ANOMALOUS
+  ground_truth: DENY
+  description: Manager proposes to send a message containing regulated identity records within the internal
+    environment under anomalous execution conditions.
+  rationale: 'GT-D003: Anomalous access to Restricted data is prohibited. Restricted data requires a stronger
+    response to contextual anomaly than routine manual approval.'
+  resource: regulated_identity_records
+  policy_rule_ids:
+  - GT-D003
+  metadata:
+    dataset_partition: final
+- scenario_id: F149
+  role: ANALYST
+  tool: READ_RECORD
+  sensitivity: INTERNAL
+  destination: EXTERNAL
+  context_risk: NORMAL
+  ground_truth: DENY
+  description: Analyst proposes to read operations schedule to an unmanaged external destination during
+    a routine workflow.
+  rationale: 'GT-D999: Fail-closed default for cases not explicitly permitted or escalated. Unmatched
+    combinations are not automatically legitimate.  They remain prohibited until the qualitative policy
+    is explicitly extended.'
+  resource: operations_schedule
+  policy_rule_ids:
+  - GT-D999
+  metadata:
+    dataset_partition: final
+- scenario_id: F150
+  role: ADMINISTRATOR
+  tool: UPDATE_RECORD
+  sensitivity: RESTRICTED
+  destination: EXTERNAL
+  context_risk: UNUSUAL
+  ground_truth: DENY
+  description: Administrator proposes to update privileged audit logs to an unmanaged external destination
+    under an unusual but plausible workflow condition.
+  rationale: 'GT-D004: Restricted data may not be sent to unmanaged external destinations. External disclosure
+    of Restricted data is outside the permitted policy envelope regardless of role or operation.'
+  resource: privileged_audit_logs
+  policy_rule_ids:
+  - GT-D004
+  metadata:
+    dataset_partition: final
+

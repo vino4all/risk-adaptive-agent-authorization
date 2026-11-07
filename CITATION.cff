@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the conference paper when using this research artifact."
+title: "Risk-Adaptive Agent Authorization"
+authors:
+  - family-names: "Arputharaj"
+    given-names: "Vinothkumar"
+  - family-names: "Jambulingam"
+    given-names: "Karthik"
+preferred-citation:
+  type: conference-paper
+  title: "Confirmatory Evaluation of Risk-Adaptive Three-Way Runtime Authorization for Tool-Using AI Agents"
+  authors:
+    - family-names: "Arputharaj"
+      given-names: "Vinothkumar"
+    - family-names: "Jambulingam"
+      given-names: "Karthik"
+  year: 2027
+  conference:
+    name: "International Conference on Artificial Intelligence, Computer, Data Sciences and Applications"
+    date-start: "2027-02-02"
+    date-end: "2027-02-04"
+    location: "Rio de Janeiro, Brazil"

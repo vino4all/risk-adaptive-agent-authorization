@@ -1,0 +1,643 @@
+{
+  "analysis_role": "post-hoc exploratory descriptive robustness",
+  "configurations": [
+    "primary",
+    "sensitivity_lower_middle",
+    "sensitivity_upper_middle",
+    "exposure_lower_middle",
+    "exposure_upper_middle",
+    "context_lower_middle",
+    "context_upper_middle",
+    "action_compressed",
+    "action_elevated"
+  ],
+  "mappings": {
+    "primary": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.5,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.5,
+        "EXPORT_DATA": 0.75,
+        "SEND_MESSAGE": 0.5,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.5,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.33,
+        "HIGH_VOLUME": 0.67,
+        "ANOMALOUS": 1.0
+      }
+    },
+    "sensitivity_lower_middle": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.25,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.5,
+        "EXPORT_DATA": 0.75,
+        "SEND_MESSAGE": 0.5,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.5,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.33,
+        "HIGH_VOLUME": 0.67,
+        "ANOMALOUS": 1.0
+      }
+    },
+    "sensitivity_upper_middle": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.75,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.5,
+        "EXPORT_DATA": 0.75,
+        "SEND_MESSAGE": 0.5,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.5,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.33,
+        "HIGH_VOLUME": 0.67,
+        "ANOMALOUS": 1.0
+      }
+    },
+    "exposure_lower_middle": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.5,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.5,
+        "EXPORT_DATA": 0.75,
+        "SEND_MESSAGE": 0.5,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.25,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.33,
+        "HIGH_VOLUME": 0.67,
+        "ANOMALOUS": 1.0
+      }
+    },
+    "exposure_upper_middle": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.5,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.5,
+        "EXPORT_DATA": 0.75,
+        "SEND_MESSAGE": 0.5,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.75,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.33,
+        "HIGH_VOLUME": 0.67,
+        "ANOMALOUS": 1.0
+      }
+    },
+    "context_lower_middle": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.5,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.5,
+        "EXPORT_DATA": 0.75,
+        "SEND_MESSAGE": 0.5,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.5,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.2,
+        "HIGH_VOLUME": 0.5,
+        "ANOMALOUS": 1.0
+      }
+    },
+    "context_upper_middle": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.5,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.5,
+        "EXPORT_DATA": 0.75,
+        "SEND_MESSAGE": 0.5,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.5,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.5,
+        "HIGH_VOLUME": 0.8,
+        "ANOMALOUS": 1.0
+      }
+    },
+    "action_compressed": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.5,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.25,
+        "SEND_MESSAGE": 0.25,
+        "EXPORT_DATA": 0.5,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.5,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.33,
+        "HIGH_VOLUME": 0.67,
+        "ANOMALOUS": 1.0
+      }
+    },
+    "action_elevated": {
+      "sensitivity": {
+        "INTERNAL": 0.0,
+        "CONFIDENTIAL": 0.5,
+        "RESTRICTED": 1.0
+      },
+      "action_severity": {
+        "READ_RECORD": 0.0,
+        "UPDATE_RECORD": 0.6,
+        "SEND_MESSAGE": 0.6,
+        "EXPORT_DATA": 0.85,
+        "DELETE_RECORD": 1.0
+      },
+      "exposure_scope": {
+        "INTERNAL": 0.0,
+        "CONTROLLED_EXTERNAL": 0.5,
+        "EXTERNAL": 1.0
+      },
+      "contextual_risk": {
+        "NORMAL": 0.0,
+        "UNUSUAL": 0.33,
+        "HIGH_VOLUME": 0.67,
+        "ANOMALOUS": 1.0
+      }
+    }
+  },
+  "formula_weights": {
+    "sensitivity": 0.25,
+    "action_severity": 0.25,
+    "exposure_scope": 0.25,
+    "contextual_risk": 0.25
+  },
+  "thresholds": {
+    "T1": 0.2,
+    "T2": 0.5
+  },
+  "metric_definitions": {
+    "UER": {
+      "truth": "DENY",
+      "predicted": "ALLOW"
+    },
+    "LDCR": {
+      "truth": "ALLOW",
+      "predicted": "ALLOW"
+    },
+    "OER": {
+      "truth": "ALLOW",
+      "predicted": "ESCALATE"
+    },
+    "CER": {
+      "truth": "ESCALATE",
+      "predicted": "ESCALATE"
+    }
+  },
+  "materiality_rule": {
+    "absolute_metric_rate_change": 0.1,
+    "decision_changes_of_150": 15,
+    "qualitative_ldcr_shortfall": 0.1
+  },
+  "primary_metrics": {
+    "UER": {
+      "numerator": 1,
+      "denominator": 65,
+      "rate": 0.015384615384615385
+    },
+    "LDCR": {
+      "numerator": 14,
+      "denominator": 27,
+      "rate": 0.5185185185185185
+    },
+    "OER": {
+      "numerator": 13,
+      "denominator": 27,
+      "rate": 0.48148148148148145
+    },
+    "CER": {
+      "numerator": 23,
+      "denominator": 58,
+      "rate": 0.39655172413793105
+    }
+  },
+  "comparator_metrics": {
+    "UER": {
+      "numerator": 0,
+      "denominator": 65,
+      "rate": 0.0
+    },
+    "LDCR": {
+      "numerator": 27,
+      "denominator": 27,
+      "rate": 1.0
+    },
+    "OER": {
+      "numerator": 0,
+      "denominator": 27,
+      "rate": 0.0
+    },
+    "CER": {
+      "numerator": 0,
+      "denominator": 58,
+      "rate": 0.0
+    }
+  },
+  "results": [
+    {
+      "configuration": "primary",
+      "changed_component": "none",
+      "decision_changes": 0,
+      "ALLOW_count": 15,
+      "ESCALATE_count": 49,
+      "DENY_count": 86,
+      "ALLOW_to_ESCALATE": 0,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 0,
+      "ESCALATE_to_DENY": 0,
+      "DENY_to_ESCALATE": 0,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 1,
+      "UER_denominator": 65,
+      "UER": 0.015384615384615385,
+      "UER_difference": 0.0,
+      "UER_absolute_difference": 0.0,
+      "LDCR_numerator": 14,
+      "LDCR_denominator": 27,
+      "LDCR": 0.5185185185185185,
+      "LDCR_difference": 0.0,
+      "LDCR_absolute_difference": 0.0,
+      "OER_numerator": 13,
+      "OER_denominator": 27,
+      "OER": 0.48148148148148145,
+      "OER_difference": 0.0,
+      "CER_numerator": 23,
+      "CER_denominator": 58,
+      "CER": 0.39655172413793105,
+      "CER_difference": 0.0
+    },
+    {
+      "configuration": "sensitivity_lower_middle",
+      "changed_component": "sensitivity",
+      "decision_changes": 16,
+      "ALLOW_count": 19,
+      "ESCALATE_count": 57,
+      "DENY_count": 74,
+      "ALLOW_to_ESCALATE": 0,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 4,
+      "ESCALATE_to_DENY": 0,
+      "DENY_to_ESCALATE": 12,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 1,
+      "UER_denominator": 65,
+      "UER": 0.015384615384615385,
+      "UER_difference": 0.0,
+      "UER_absolute_difference": 0.0,
+      "LDCR_numerator": 18,
+      "LDCR_denominator": 27,
+      "LDCR": 0.6666666666666666,
+      "LDCR_difference": 0.14814814814814814,
+      "LDCR_absolute_difference": 0.14814814814814814,
+      "OER_numerator": 9,
+      "OER_denominator": 27,
+      "OER": 0.3333333333333333,
+      "OER_difference": -0.14814814814814814,
+      "CER_numerator": 34,
+      "CER_denominator": 58,
+      "CER": 0.5862068965517241,
+      "CER_difference": 0.18965517241379304
+    },
+    {
+      "configuration": "sensitivity_upper_middle",
+      "changed_component": "sensitivity",
+      "decision_changes": 5,
+      "ALLOW_count": 15,
+      "ESCALATE_count": 44,
+      "DENY_count": 91,
+      "ALLOW_to_ESCALATE": 0,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 0,
+      "ESCALATE_to_DENY": 5,
+      "DENY_to_ESCALATE": 0,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 1,
+      "UER_denominator": 65,
+      "UER": 0.015384615384615385,
+      "UER_difference": 0.0,
+      "UER_absolute_difference": 0.0,
+      "LDCR_numerator": 14,
+      "LDCR_denominator": 27,
+      "LDCR": 0.5185185185185185,
+      "LDCR_difference": 0.0,
+      "LDCR_absolute_difference": 0.0,
+      "OER_numerator": 13,
+      "OER_denominator": 27,
+      "OER": 0.48148148148148145,
+      "OER_difference": 0.0,
+      "CER_numerator": 19,
+      "CER_denominator": 58,
+      "CER": 0.3275862068965517,
+      "CER_difference": -0.06896551724137934
+    },
+    {
+      "configuration": "exposure_lower_middle",
+      "changed_component": "exposure_scope",
+      "decision_changes": 12,
+      "ALLOW_count": 18,
+      "ESCALATE_count": 55,
+      "DENY_count": 77,
+      "ALLOW_to_ESCALATE": 0,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 3,
+      "ESCALATE_to_DENY": 0,
+      "DENY_to_ESCALATE": 9,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 2,
+      "UER_denominator": 65,
+      "UER": 0.03076923076923077,
+      "UER_difference": 0.015384615384615385,
+      "UER_absolute_difference": 0.015384615384615385,
+      "LDCR_numerator": 16,
+      "LDCR_denominator": 27,
+      "LDCR": 0.5925925925925926,
+      "LDCR_difference": 0.07407407407407407,
+      "LDCR_absolute_difference": 0.07407407407407407,
+      "OER_numerator": 11,
+      "OER_denominator": 27,
+      "OER": 0.4074074074074074,
+      "OER_difference": -0.07407407407407407,
+      "CER_numerator": 30,
+      "CER_denominator": 58,
+      "CER": 0.5172413793103449,
+      "CER_difference": 0.12068965517241381
+    },
+    {
+      "configuration": "exposure_upper_middle",
+      "changed_component": "exposure_scope",
+      "decision_changes": 4,
+      "ALLOW_count": 15,
+      "ESCALATE_count": 45,
+      "DENY_count": 90,
+      "ALLOW_to_ESCALATE": 0,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 0,
+      "ESCALATE_to_DENY": 4,
+      "DENY_to_ESCALATE": 0,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 1,
+      "UER_denominator": 65,
+      "UER": 0.015384615384615385,
+      "UER_difference": 0.0,
+      "UER_absolute_difference": 0.0,
+      "LDCR_numerator": 14,
+      "LDCR_denominator": 27,
+      "LDCR": 0.5185185185185185,
+      "LDCR_difference": 0.0,
+      "LDCR_absolute_difference": 0.0,
+      "OER_numerator": 13,
+      "OER_denominator": 27,
+      "OER": 0.48148148148148145,
+      "OER_difference": 0.0,
+      "CER_numerator": 20,
+      "CER_denominator": 58,
+      "CER": 0.3448275862068966,
+      "CER_difference": -0.051724137931034475
+    },
+    {
+      "configuration": "context_lower_middle",
+      "changed_component": "contextual_risk",
+      "decision_changes": 4,
+      "ALLOW_count": 15,
+      "ESCALATE_count": 53,
+      "DENY_count": 82,
+      "ALLOW_to_ESCALATE": 0,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 0,
+      "ESCALATE_to_DENY": 0,
+      "DENY_to_ESCALATE": 4,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 1,
+      "UER_denominator": 65,
+      "UER": 0.015384615384615385,
+      "UER_difference": 0.0,
+      "UER_absolute_difference": 0.0,
+      "LDCR_numerator": 14,
+      "LDCR_denominator": 27,
+      "LDCR": 0.5185185185185185,
+      "LDCR_difference": 0.0,
+      "LDCR_absolute_difference": 0.0,
+      "OER_numerator": 13,
+      "OER_denominator": 27,
+      "OER": 0.48148148148148145,
+      "OER_difference": 0.0,
+      "CER_numerator": 26,
+      "CER_denominator": 58,
+      "CER": 0.4482758620689655,
+      "CER_difference": 0.051724137931034475
+    },
+    {
+      "configuration": "context_upper_middle",
+      "changed_component": "contextual_risk",
+      "decision_changes": 12,
+      "ALLOW_count": 15,
+      "ESCALATE_count": 37,
+      "DENY_count": 98,
+      "ALLOW_to_ESCALATE": 0,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 0,
+      "ESCALATE_to_DENY": 12,
+      "DENY_to_ESCALATE": 0,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 1,
+      "UER_denominator": 65,
+      "UER": 0.015384615384615385,
+      "UER_difference": 0.0,
+      "UER_absolute_difference": 0.0,
+      "LDCR_numerator": 14,
+      "LDCR_denominator": 27,
+      "LDCR": 0.5185185185185185,
+      "LDCR_difference": 0.0,
+      "LDCR_absolute_difference": 0.0,
+      "OER_numerator": 13,
+      "OER_denominator": 27,
+      "OER": 0.48148148148148145,
+      "OER_difference": 0.0,
+      "CER_numerator": 14,
+      "CER_denominator": 58,
+      "CER": 0.2413793103448276,
+      "CER_difference": -0.15517241379310345
+    },
+    {
+      "configuration": "action_compressed",
+      "changed_component": "action_severity",
+      "decision_changes": 21,
+      "ALLOW_count": 22,
+      "ESCALATE_count": 56,
+      "DENY_count": 72,
+      "ALLOW_to_ESCALATE": 0,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 7,
+      "ESCALATE_to_DENY": 0,
+      "DENY_to_ESCALATE": 14,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 2,
+      "UER_denominator": 65,
+      "UER": 0.03076923076923077,
+      "UER_difference": 0.015384615384615385,
+      "UER_absolute_difference": 0.015384615384615385,
+      "LDCR_numerator": 20,
+      "LDCR_denominator": 27,
+      "LDCR": 0.7407407407407407,
+      "LDCR_difference": 0.2222222222222222,
+      "LDCR_absolute_difference": 0.2222222222222222,
+      "OER_numerator": 7,
+      "OER_denominator": 27,
+      "OER": 0.25925925925925924,
+      "OER_difference": -0.2222222222222222,
+      "CER_numerator": 33,
+      "CER_denominator": 58,
+      "CER": 0.5689655172413793,
+      "CER_difference": 0.1724137931034483
+    },
+    {
+      "configuration": "action_elevated",
+      "changed_component": "action_severity",
+      "decision_changes": 5,
+      "ALLOW_count": 12,
+      "ESCALATE_count": 50,
+      "DENY_count": 88,
+      "ALLOW_to_ESCALATE": 3,
+      "ALLOW_to_DENY": 0,
+      "ESCALATE_to_ALLOW": 0,
+      "ESCALATE_to_DENY": 2,
+      "DENY_to_ESCALATE": 0,
+      "DENY_to_ALLOW": 0,
+      "UER_numerator": 1,
+      "UER_denominator": 65,
+      "UER": 0.015384615384615385,
+      "UER_difference": 0.0,
+      "UER_absolute_difference": 0.0,
+      "LDCR_numerator": 11,
+      "LDCR_denominator": 27,
+      "LDCR": 0.4074074074074074,
+      "LDCR_difference": -0.1111111111111111,
+      "LDCR_absolute_difference": 0.1111111111111111,
+      "OER_numerator": 16,
+      "OER_denominator": 27,
+      "OER": 0.5925925925925926,
+      "OER_difference": 0.1111111111111111,
+      "CER_numerator": 22,
+      "CER_denominator": 58,
+      "CER": 0.3793103448275862,
+      "CER_difference": -0.017241379310344862
+    }
+  ],
+  "material_change_configurations": [
+    "sensitivity_lower_middle",
+    "exposure_lower_middle",
+    "context_upper_middle",
+    "action_compressed",
+    "action_elevated"
+  ],
+  "qualitative_conclusion_changed": false,
+  "classification": "PARTIALLY ROBUST",
+  "protected_sha256_before": {
+    "confirmatory/inputs/scenarios.yaml": "c3672f85b2cd63f145d47afc92d3f7588f10dc9f85f69fd887d89a8d38bc9cca",
+    "confirmatory/inputs/risk_config.yaml": "e6a9f073ef40358f6cee348ae27200ec1b5a599844be0fb2883b18e8e1469539",
+    "confirmatory/inputs/policy_matrix.yaml": "d25ed4ae2d60c5b5a29c62cf6712d5d53299e4f32ab64dac0bf1305ed921f94c",
+    "confirmatory/inputs/context_aware_abac.yaml": "0801ce09d3c778bec2f52bc0f4c8240d4badc616577b9e0dddc6c3a1a06bc3e4",
+    "confirmatory/inputs/analysis_plan.md": "63f26b80e10fce6ff7d5a77e4b0a20270bd1bc208b815c1a618ab33ae0a20a83",
+    "confirmatory/results/authorization/decisions.csv": "488224b5953c0540d9b0ead965525a411e8f298609ac74100826ff2c6fbee061",
+    "confirmatory/results/authorization/summary_metrics.csv": "10d47deeb13bc8bec2903e0bfaca172f6673e73e7eabd460f67f572a29084075",
+    "confirmatory/results/authorization/primary_statistical_tests.csv": "cf24745315537d0fd85b5860883ef878dba424b2666271f26d6416dcb339e349",
+    "confirmatory/results/authorization/escalation_analysis.csv": "9dcf2f643db9fe49d327f3a59a8d64969f56930a70f7a47569cbf015d2a237c5",
+    "confirmatory/results/authorization/run_manifest.json": "89bcb6b7c42639e30b4bd793dd0f0ce58f6e3b40c34817fddf92372972b85fbc"
+  },
+  "protected_sha256_after": {
+    "confirmatory/inputs/scenarios.yaml": "c3672f85b2cd63f145d47afc92d3f7588f10dc9f85f69fd887d89a8d38bc9cca",
+    "confirmatory/inputs/risk_config.yaml": "e6a9f073ef40358f6cee348ae27200ec1b5a599844be0fb2883b18e8e1469539",
+    "confirmatory/inputs/policy_matrix.yaml": "d25ed4ae2d60c5b5a29c62cf6712d5d53299e4f32ab64dac0bf1305ed921f94c",
+    "confirmatory/inputs/context_aware_abac.yaml": "0801ce09d3c778bec2f52bc0f4c8240d4badc616577b9e0dddc6c3a1a06bc3e4",
+    "confirmatory/inputs/analysis_plan.md": "63f26b80e10fce6ff7d5a77e4b0a20270bd1bc208b815c1a618ab33ae0a20a83",
+    "confirmatory/results/authorization/decisions.csv": "488224b5953c0540d9b0ead965525a411e8f298609ac74100826ff2c6fbee061",
+    "confirmatory/results/authorization/summary_metrics.csv": "10d47deeb13bc8bec2903e0bfaca172f6673e73e7eabd460f67f572a29084075",
+    "confirmatory/results/authorization/primary_statistical_tests.csv": "cf24745315537d0fd85b5860883ef878dba424b2666271f26d6416dcb339e349",
+    "confirmatory/results/authorization/escalation_analysis.csv": "9dcf2f643db9fe49d327f3a59a8d64969f56930a70f7a47569cbf015d2a237c5",
+    "confirmatory/results/authorization/run_manifest.json": "89bcb6b7c42639e30b4bd793dd0f0ce58f6e3b40c34817fddf92372972b85fbc"
+  },
+  "integrity_verified": true,
+  "statement": "This sensitivity analysis does not modify or replace the prespecified primary mapping or confirmatory results."
+}

@@ -1,0 +1,15 @@
+# Runtime and analysis requirements for the risk-agent-auth experiment.
+# Target interpreter: Python 3.12 (see README.md).
+#
+# Parsing / data handling
+PyYAML>=6.0
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.8
+# Optional hosted-LLM integration validation
+google-genai>=1.0.0
+# Statistical analysis (threshold sensitivity, paired tests)
+scipy>=1.11
+statsmodels>=0.14
+# Testing
+pytest>=8.0

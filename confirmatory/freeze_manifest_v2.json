@@ -1,0 +1,47 @@
+{
+  "schema_version": "2.0.0",
+  "protocol_version": "v2",
+  "status": "frozen-before-confirmatory-execution",
+  "created_at_utc": "2026-09-25T22:31:01+00:00",
+  "freeze_v1": {
+    "path": "confirmatory/freeze_manifest.json",
+    "preserved_as_historical_evidence": true,
+    "source_tree_sha256": "f1bed2635cb33c03b29aecb8d105d5cd176d9d99bea7a9dc066d0bcd5dfe5c67",
+    "statement": "Freeze v1 remains preserved as historical evidence and is not overwritten or reconstructed.",
+    "verification_limitation": "Its repository-wide scope included documentation, tests, and reviewer artifacts, and no historical per-file source inventory or Git history exists."
+  },
+  "prospective_scope": {
+    "statement": "Freeze v2 is a new prospective execution freeze, not a reconstruction of Freeze v1.",
+    "timing": "Created after independent reviewer agreement was observed and before any confirmatory authorization or latency outcome existed.",
+    "reason": "Replace the unusable repository-wide source check prospectively with an explicit research-source allowlist and per-file inventory."
+  },
+  "reviewer_agreement_observed_before_v2": {
+    "reviewed_scenarios": 60,
+    "raw_agreement_count": 32,
+    "raw_agreement_denominator": 60,
+    "raw_agreement_percentage": 53.333333333333336,
+    "cohens_kappa": 0.3301
+  },
+  "reviewer_results_used_to_modify_research_inputs_or_methods": false,
+  "confirmatory_outcomes_observed_before_v2": {
+    "authorization": false,
+    "latency": false
+  },
+  "required_inputs": {
+    "confirmatory/inputs/policy_matrix.yaml": "d25ed4ae2d60c5b5a29c62cf6712d5d53299e4f32ab64dac0bf1305ed921f94c",
+    "confirmatory/inputs/scenarios.yaml": "c3672f85b2cd63f145d47afc92d3f7588f10dc9f85f69fd887d89a8d38bc9cca",
+    "confirmatory/inputs/risk_config.yaml": "e6a9f073ef40358f6cee348ae27200ec1b5a599844be0fb2883b18e8e1469539",
+    "confirmatory/inputs/context_aware_abac.yaml": "0801ce09d3c778bec2f52bc0f4c8240d4badc616577b9e0dddc6c3a1a06bc3e4",
+    "confirmatory/inputs/analysis_plan.md": "63f26b80e10fce6ff7d5a77e4b0a20270bd1bc208b815c1a618ab33ae0a20a83"
+  },
+  "required_inputs_identical_to_v1": true,
+  "research_source_allowlist_version": "research-source-v2.0.0",
+  "research_source_manifest_path": "confirmatory/research_source_manifest_v2.json",
+  "research_source_manifest_sha256": "60b11f69b2aca12364078f425d746a0bae0adc26e74020a5b557373529bc6c22",
+  "aggregate_research_source_sha256": "7bc9b72187b8a24bee6d5409666cb64ca2ab3464a8591059566988d1a3f808bb",
+  "dependency_lock_path": "requirements.lock",
+  "dependency_lock_sha256": "961d54767779c96a0fd51aa9c41804170a7945df866f969c4dd43b6a3358a4c1",
+  "git_commit": null,
+  "source_authority": "research_source_manifest_sha256",
+  "labels_or_disagreements_auto_adjudicated": false
+}

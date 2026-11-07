@@ -1,0 +1,83 @@
+{
+  "status": "recovered-after-manifest-generation-failure",
+  "experiment": "confirmatory latency microbenchmark",
+  "original_benchmark_command": [
+    "python",
+    "-m",
+    "confirmatory.latency_benchmark",
+    "--execute"
+  ],
+  "original_failure": {
+    "type": "KeyError: source_tree_sha256",
+    "failure_point": "confirmatory/latency_benchmark.py, run_benchmark, while constructing benchmark_manifest.json"
+  },
+  "completion_statements": {
+    "measurements_and_paired_inference_completed_before_failure": true,
+    "latency_benchmark_was_not_rerun": true,
+    "measurements_modified": false,
+    "inference_recomputed": false,
+    "benchmark_rerun": false
+  },
+  "original_benchmark_timestamp_utc": null,
+  "original_benchmark_timestamp_availability": "unavailable; not persisted",
+  "recovery_timestamp_utc": "2026-09-26T12:38:32+00:00",
+  "freeze_protocol_version": "v2",
+  "provenance": {
+    "git_commit": null,
+    "git_commit_at_recovery": "93b12adff1155893b056be6ba965170cb95ef5bd",
+    "research_source_manifest_sha256": "60b11f69b2aca12364078f425d746a0bae0adc26e74020a5b557373529bc6c22",
+    "aggregate_research_source_sha256": "7bc9b72187b8a24bee6d5409666cb64ca2ab3464a8591059566988d1a3f808bb",
+    "dependency_lock_sha256": "961d54767779c96a0fd51aa9c41804170a7945df866f969c4dd43b6a3358a4c1"
+  },
+  "environment_at_recovery": {
+    "python_version": "3.12.10",
+    "python_implementation": "CPython",
+    "os": "Windows-11-10.0.26200-SP0",
+    "os_system": "Windows",
+    "os_release": "11",
+    "machine": "AMD64",
+    "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "package_versions": {
+      "PyYAML": "6.0.3",
+      "pandas": "2.2.2",
+      "numpy": "2.2.6",
+      "matplotlib": "3.11.1",
+      "scipy": "1.18.0",
+      "statsmodels": null,
+      "pytest": "9.1.1",
+      "google-genai": null
+    }
+  },
+  "benchmark_parameters": {
+    "warmup_rounds": 20,
+    "repetitions_per_scenario_per_method": 200,
+    "timer_overhead_samples": 10000,
+    "permutations": 100000,
+    "bootstrap_replicates": 10000,
+    "random_seed": 20261018,
+    "timer": "time.perf_counter_ns",
+    "timer_overhead_subtracted": false
+  },
+  "outputs": {
+    "raw_repetitions.csv": {
+      "path": "confirmatory/results/latency/raw_repetitions.csv",
+      "sha256": "6e557d4ec289a8debf044daac3dd1bf541229f4c01b597efea42e54d2c86cfa9"
+    },
+    "scenario_summary.csv": {
+      "path": "confirmatory/results/latency/scenario_summary.csv",
+      "sha256": "5ff058366ea929249a875a13eadd3cbd5dfbd4db4612bc8f2529a838852cbfd4"
+    },
+    "timer_overhead.csv": {
+      "path": "confirmatory/results/latency/timer_overhead.csv",
+      "sha256": "38d77fe7a3972fed31b96169d35d68bd885e3b9a9d69fc4d71b9befad0a52ef7"
+    },
+    "paired_inference.json": {
+      "path": "confirmatory/results/latency/paired_inference.json",
+      "sha256": "6c8c27e67e782b70925c1920c6ec7a30c6af4e9a7392b12007665ab7d9e0062c"
+    }
+  },
+  "recovery_script": {
+    "path": "confirmatory/recover_latency_manifest.py",
+    "sha256": "47dfa9ecf4e7e51eefc974073e853715fe40cad5c35faaf9704cf08d69190f17"
+  }
+}

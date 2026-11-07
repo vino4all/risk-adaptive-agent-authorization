@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-09-18T19:40:56+00:00",
+  "scenario_count": 150,
+  "matched_pair_design": true,
+  "authorization_logic_only_latency": true,
+  "analysis_seed": 20260918,
+  "bootstrap_replicates": 10000,
+  "frozen_input_hashes_before": {
+    "scenarios_sha256": "d87d651a3dbf5d0dee367e1b7b81a1654173211284176b38d42cf412b7511ad4",
+    "policy_matrix_sha256": "4de9edee5652eaac56dc83a36e35be2cd20b89ab79aa7a290c5b2d8b870954c5",
+    "risk_config_sha256": "e78205f2c111b038ad835af1752061932597330e8adafab0a1a4d06609968f4d"
+  },
+  "frozen_input_hashes_after": {
+    "scenarios_sha256": "d87d651a3dbf5d0dee367e1b7b81a1654173211284176b38d42cf412b7511ad4",
+    "policy_matrix_sha256": "4de9edee5652eaac56dc83a36e35be2cd20b89ab79aa7a290c5b2d8b870954c5",
+    "risk_config_sha256": "e78205f2c111b038ad835af1752061932597330e8adafab0a1a4d06609968f4d"
+  },
+  "outputs": {
+    "decisions": "results/exploratory/decisions.csv",
+    "summary_metrics": "results/exploratory/summary_metrics.csv",
+    "escalation_analysis": "results/exploratory/escalation_analysis.csv",
+    "statistical_tests": "results/exploratory/statistical_tests.csv",
+    "latency_summary": "results/exploratory/latency_summary.csv"
+  },
+  "release_copy_note": "Absolute local paths were replaced with repository-relative paths in this release copy; preserved exploratory measurements are unchanged."
+}

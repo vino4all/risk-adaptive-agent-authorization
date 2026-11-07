@@ -1,0 +1,88 @@
+{
+  "experiment": "confirmatory",
+  "earlier_exploratory_run_preregistered": false,
+  "primary_comparator": "context_aware_binary_abac",
+  "environment": {
+    "timestamp_utc": "2026-09-26T12:10:01+00:00",
+    "command_line": [
+      "python",
+      "-m",
+      "confirmatory.runner",
+      "--execute"
+    ],
+    "source": {
+      "git_commit": "93b12adff1155893b056be6ba965170cb95ef5bd",
+      "freeze_protocol": "v2",
+      "research_source_manifest_sha256": "60b11f69b2aca12364078f425d746a0bae0adc26e74020a5b557373529bc6c22",
+      "aggregate_research_source_sha256": "7bc9b72187b8a24bee6d5409666cb64ca2ab3464a8591059566988d1a3f808bb"
+    },
+    "python": {
+      "version": "3.12.10",
+      "implementation": "CPython",
+      "executable_name": "python.exe"
+    },
+    "platform": {
+      "os": "Windows-11-10.0.26200-SP0",
+      "system": "Windows",
+      "release": "11",
+      "machine": "AMD64",
+      "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel"
+    },
+    "packages": {
+      "PyYAML": "6.0.3",
+      "pandas": "2.2.2",
+      "numpy": "2.2.6",
+      "matplotlib": "3.11.1",
+      "scipy": "1.18.0",
+      "statsmodels": null,
+      "pytest": "9.1.1",
+      "google-genai": null
+    }
+  },
+  "input_hashes": {
+    "confirmatory/inputs/policy_matrix.yaml": "d25ed4ae2d60c5b5a29c62cf6712d5d53299e4f32ab64dac0bf1305ed921f94c",
+    "confirmatory/inputs/scenarios.yaml": "c3672f85b2cd63f145d47afc92d3f7588f10dc9f85f69fd887d89a8d38bc9cca",
+    "confirmatory/inputs/risk_config.yaml": "e6a9f073ef40358f6cee348ae27200ec1b5a599844be0fb2883b18e8e1469539",
+    "confirmatory/inputs/context_aware_abac.yaml": "0801ce09d3c778bec2f52bc0f4c8240d4badc616577b9e0dddc6c3a1a06bc3e4",
+    "confirmatory/inputs/analysis_plan.md": "63f26b80e10fce6ff7d5a77e4b0a20270bd1bc208b815c1a618ab33ae0a20a83"
+  },
+  "freeze_protocol_version": "v2",
+  "research_source_allowlist_version": "research-source-v2.0.0",
+  "research_source_manifest_sha256": "60b11f69b2aca12364078f425d746a0bae0adc26e74020a5b557373529bc6c22",
+  "aggregate_research_source_sha256": "7bc9b72187b8a24bee6d5409666cb64ca2ab3464a8591059566988d1a3f808bb",
+  "dependency_lock_sha256": "961d54767779c96a0fd51aa9c41804170a7945df866f969c4dd43b6a3358a4c1",
+  "test_result": {
+    "command": [
+      "python.exe",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "started_at_utc": "2026-09-26T12:09:38+00:00",
+    "exit_code": 0,
+    "passed": true,
+    "stdout": "........................................................................ [ 36%]\n........................................................................ [ 72%]\n........................................................                 [100%]\n200 passed in 15.82s",
+    "stderr": ""
+  },
+  "outputs": {
+    "decisions": {
+      "path": "confirmatory/results/authorization/decisions.csv",
+      "sha256": "488224b5953c0540d9b0ead965525a411e8f298609ac74100826ff2c6fbee061"
+    },
+    "summary_metrics": {
+      "path": "confirmatory/results/authorization/summary_metrics.csv",
+      "sha256": "10d47deeb13bc8bec2903e0bfaca172f6673e73e7eabd460f67f572a29084075"
+    },
+    "primary_statistical_tests": {
+      "path": "confirmatory/results/authorization/primary_statistical_tests.csv",
+      "sha256": "cf24745315537d0fd85b5860883ef878dba424b2666271f26d6416dcb339e349"
+    },
+    "escalation_analysis": {
+      "path": "confirmatory/results/authorization/escalation_analysis.csv",
+      "sha256": "9dcf2f643db9fe49d327f3a59a8d64969f56930a70f7a47569cbf015d2a237c5"
+    }
+  },
+  "latency_measured_here": false,
+  "latency_benchmark": "separate confirmatory.latency_benchmark command",
+  "generalization_scope": "frozen purposive synthetic benchmark only"
+}

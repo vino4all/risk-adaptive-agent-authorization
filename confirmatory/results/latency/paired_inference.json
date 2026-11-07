@@ -1,0 +1,13 @@
+{
+  "analysis_unit": "scenario-level median latency",
+  "effect": "mean paired difference of scenario medians (risk minus comparator)",
+  "effect_ns": 1922.6666666666667,
+  "ci_lower_ns": 60.61666666666671,
+  "ci_upper_ns": 3737.358333333333,
+  "ci_method": "95% scenario-cluster percentile bootstrap",
+  "test": "two-sided paired sign-flip permutation test",
+  "permutations": 100000,
+  "p_value": 0.044919550804491955,
+  "seed": 20261018,
+  "normality_pretest_used": false
+}

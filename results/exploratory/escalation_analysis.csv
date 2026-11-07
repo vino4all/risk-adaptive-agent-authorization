@@ -1,0 +1,6 @@
+method,metric,numerator,denominator,rate,ci_level,ci_lower,ci_upper,ci_method
+abac_binary,resolved_ALLOW,9,58,0.15517241379310345,0.95,0.0838449195301804,0.2693398085989251,Wilson score interval
+abac_binary,resolved_DENY,49,58,0.8448275862068966,0.95,0.730660191401075,0.9161550804698196,Wilson score interval
+risk_adaptive,correctly_ESCALATE_CER,23,58,0.39655172413793105,0.95,0.2808875779487437,0.525067840489988,Wilson score interval
+risk_adaptive,incorrectly_ALLOW,0,58,0.0,0.95,0.0,0.062117855787202914,Wilson score interval
+risk_adaptive,incorrectly_DENY,35,58,0.603448275862069,0.95,0.47493215951001205,0.7191124220512564,Wilson score interval

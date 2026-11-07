@@ -1,0 +1,9 @@
+# Confirmatory environment tested on CPython 3.12.10.
+# Install exactly with: python -m pip install -r requirements.lock
+PyYAML==6.0.3
+pandas==2.2.2
+numpy==2.2.6
+matplotlib==3.11.1
+scipy==1.18.0
+pytest==9.1.1
+

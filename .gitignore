@@ -1,0 +1,44 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Reviewer/private data
+confirmatory/reviewer_returns/
+private/
+secrets/
+local/
+data/reviewer_sample_key.csv
+data/reviewer_sample_manifest.json
+confirmatory/results/reviewer_disagreements.csv
+confirmatory/results/reviewer_robustness/human_majority_labels.csv
+confirmatory/results/reviewer_robustness/deny_boundary_analysis.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments/build
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary
+*.log
+*.tmp
+*.bak
+*.zip

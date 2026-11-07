@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "allowlist_version": "research-source-v2.0.0",
+  "hashing_algorithm": "sha256(concat(u64be(len(utf8_posix_relative_path)), utf8_posix_relative_path, raw_sha256_file_digest)) for paths in lexical order",
+  "creation_timestamp_utc": "2026-09-25T22:31:00+00:00",
+  "ordered_file_count": 19,
+  "files": [
+    {
+      "path": "confirmatory/__init__.py",
+      "sha256": "75fe6449a9bbab875dd65827b2d92bf02d21fa3b1811b19e342d93254ea047e3",
+      "size_bytes": 55
+    },
+    {
+      "path": "confirmatory/analysis.py",
+      "sha256": "3972100118c61e3026fffec3bbb8c0d3cb62f8328b54540c6f41d129cce578c1",
+      "size_bytes": 7061
+    },
+    {
+      "path": "confirmatory/comparator.py",
+      "sha256": "5349fead013c9a2e3a039f1de5c83bb3e0d32c3229caf5b31d3866de80ed9f80",
+      "size_bytes": 5523
+    },
+    {
+      "path": "confirmatory/inputs/analysis_plan.md",
+      "sha256": "63f26b80e10fce6ff7d5a77e4b0a20270bd1bc208b815c1a618ab33ae0a20a83",
+      "size_bytes": 3410
+    },
+    {
+      "path": "confirmatory/inputs/context_aware_abac.yaml",
+      "sha256": "0801ce09d3c778bec2f52bc0f4c8240d4badc616577b9e0dddc6c3a1a06bc3e4",
+      "size_bytes": 654
+    },
+    {
+      "path": "confirmatory/inputs/policy_matrix.yaml",
+      "sha256": "d25ed4ae2d60c5b5a29c62cf6712d5d53299e4f32ab64dac0bf1305ed921f94c",
+      "size_bytes": 28448
+    },
+    {
+      "path": "confirmatory/inputs/risk_config.yaml",
+      "sha256": "e6a9f073ef40358f6cee348ae27200ec1b5a599844be0fb2883b18e8e1469539",
+      "size_bytes": 3061
+    },
+    {
+      "path": "confirmatory/inputs/scenarios.yaml",
+      "sha256": "c3672f85b2cd63f145d47afc92d3f7588f10dc9f85f69fd887d89a8d38bc9cca",
+      "size_bytes": 91076
+    },
+    {
+      "path": "confirmatory/latency_benchmark.py",
+      "sha256": "5adeb8e986c7f1d5906120967971408ef7c8829df6d30043dfd4288bd278e046",
+      "size_bytes": 11814
+    },
+    {
+      "path": "confirmatory/provenance.py",
+      "sha256": "303891100b882c1166e52b58e83de18e5064da3176875e993e9ca6a57523a380",
+      "size_bytes": 12144
+    },
+    {
+      "path": "confirmatory/runner.py",
+      "sha256": "fae62a51f6b35de88599d093645c5c027e4206fb431e2280b477b481c320fc81",
+      "size_bytes": 7591
+    },
+    {
+      "path": "requirements.lock",
+      "sha256": "961d54767779c96a0fd51aa9c41804170a7945df866f969c4dd43b6a3358a4c1",
+      "size_bytes": 210
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "166d3f9c9cb80d7cd57097fea167adee5dba486d49fead64652e317b3ee52dd2",
+      "size_bytes": 391
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "42fb3baab6ca01e9c03e23e2aeb25996dd370ca127e647c37db0a0d42e4034e8",
+      "size_bytes": 170
+    },
+    {
+      "path": "src/calibration.py",
+      "sha256": "caecdde2e23b0239847f97014f32e75a0eb59f6504484d9672d01b0c06b92814",
+      "size_bytes": 13092
+    },
+    {
+      "path": "src/dataset_generation.py",
+      "sha256": "637dd99b52e6f7339573dbe7202054a031b6ab3530f01b2d0f78108bf56198c7",
+      "size_bytes": 14429
+    },
+    {
+      "path": "src/models.py",
+      "sha256": "8ac8f27f0157c5a05b9fbc508aa3417d6ce9bcc972293dea7088aa77bfb4c7a1",
+      "size_bytes": 23084
+    },
+    {
+      "path": "src/policy.py",
+      "sha256": "9276cc2e61b40507f5d23cee71f660e79a6ef51f38b977afb8cdd3b45d5d7c4f",
+      "size_bytes": 56961
+    },
+    {
+      "path": "src/risk_engine.py",
+      "sha256": "9fe57fdfc07a4108f419d966e58f5af16511e4fcb769ee58db10d918796c911e",
+      "size_bytes": 6448
+    }
+  ],
+  "aggregate_research_source_sha256": "7bc9b72187b8a24bee6d5409666cb64ca2ab3464a8591059566988d1a3f808bb"
+}

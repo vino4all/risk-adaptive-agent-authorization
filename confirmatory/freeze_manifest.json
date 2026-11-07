@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "status": "frozen-before-confirmatory-execution",
+  "created_at_utc": "2026-09-18T20:30:27Z",
+  "earlier_exploratory_run_preregistered": false,
+  "confirmatory_evaluation_executed": false,
+  "required_inputs": {
+    "confirmatory/inputs/policy_matrix.yaml": "d25ed4ae2d60c5b5a29c62cf6712d5d53299e4f32ab64dac0bf1305ed921f94c",
+    "confirmatory/inputs/scenarios.yaml": "c3672f85b2cd63f145d47afc92d3f7588f10dc9f85f69fd887d89a8d38bc9cca",
+    "confirmatory/inputs/risk_config.yaml": "e6a9f073ef40358f6cee348ae27200ec1b5a599844be0fb2883b18e8e1469539",
+    "confirmatory/inputs/context_aware_abac.yaml": "0801ce09d3c778bec2f52bc0f4c8240d4badc616577b9e0dddc6c3a1a06bc3e4",
+    "confirmatory/inputs/analysis_plan.md": "63f26b80e10fce6ff7d5a77e4b0a20270bd1bc208b815c1a618ab33ae0a20a83"
+  },
+  "source_tree_sha256": "f1bed2635cb33c03b29aecb8d105d5cd176d9d99bea7a9dc066d0bcd5dfe5c67",
+  "source_tree_hash_exclusions": [
+    ".env",
+    ".git/",
+    ".pytest_cache/",
+    "**/__pycache__/",
+    "*.pyc",
+    "confirmatory/freeze_manifest.json",
+    "confirmatory/results/",
+    "confirmatory/reviewer_returns/",
+    "confirmatory/release_bundle/"
+  ],
+  "freeze_change_policy": "Any mismatch requires a new explicitly versioned freeze; do not update this manifest after inspecting confirmatory outcomes."
+}

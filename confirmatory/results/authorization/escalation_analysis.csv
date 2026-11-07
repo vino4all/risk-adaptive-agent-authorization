@@ -1,0 +1,6 @@
+method,predicted_decision,numerator,denominator,rate,analysis_role
+context_aware_binary_abac,ALLOW,0,58,0.0,descriptive_structural
+context_aware_binary_abac,DENY,58,58,1.0,descriptive_structural
+risk_adaptive,ALLOW,0,58,0.0,descriptive_structural
+risk_adaptive,ESCALATE,23,58,0.39655172413793105,descriptive_structural
+risk_adaptive,DENY,35,58,0.603448275862069,descriptive_structural
